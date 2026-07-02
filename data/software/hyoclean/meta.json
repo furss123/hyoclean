@@ -1,0 +1,28 @@
+{
+  "slug": "hyoclean",
+  "status": "active",
+  "category": "utility",
+  "platforms": ["windows"],
+  "tags": ["windows", "utility", "cleaner", "memory", "optimizer"],
+  "featured": true,
+  "icon": "/data/software/hyoclean/icon.svg",
+  "banner": "/data/software/hyoclean/banner.svg",
+  "name": { "ko": "효클린", "en": "HyoClean" },
+  "shortDescription": {
+    "ko": "CCleaner보다 강력한 실시간 메모리 정리 & 시스템 최적화 도구",
+    "en": "A stronger, safer Windows cleaner with real-time memory optimization"
+  },
+  "description": {
+    "ko": "딥 스캔, 스마트 정리, 실시간 메모리 정리, 성능 최적화, 프라이버시 클리너까지 하나로. 정리 전 복원지점과 1클릭 롤백으로 안전하게 관리하세요.\n\n제작: HyoT · © 2026",
+    "en": "Deep scan, smart cleanup, real-time memory optimization, performance tuning, and a privacy cleaner in one app. Restore points and one-click rollback keep every cleanup safe.\n\nAuthor: HyoT · © 2026"
+  },
+  "requirements": { "os": "Windows 10 / 11 (64-bit)" },
+  "links": {
+    "github": "https://github.com/furss123/hyoclean",
+    "homepage": "https://hyot.dev"
+  },
+  "githubRepo": "furss123/hyoclean",
+  "createdAt": "2026-07-02",
+  "updatedAt": "2026-07-02",
+  "visible": true
+}

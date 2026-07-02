@@ -1,0 +1,44 @@
+[package]
+name = "hyoclean"
+version = "0.1.0"
+description = "HyoClean - Windows system cleaner & real-time memory optimizer by HyoT"
+authors = ["HyoT"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "hyoclean_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# Real-time memory monitor (conservative mode: sysinfo snapshot + refresh).
+sysinfo = "0.32"
+# Pro "aggressive mode" per-process working-set trim (EmptyWorkingSet).
+windows = { version = "0.57", features = [
+  "Win32_Foundation",
+  "Win32_System_ProcessStatus",
+  "Win32_System_Threading",
+] }
+# Deep scan: walk temp/cache directories.
+walkdir = "2"
+chrono = "0.4"
+# Auto-update check against releases.json.
+reqwest = { version = "0.12", features = ["json"] }
+semver = "1"
+tokio = { version = "1", features = ["rt-multi-thread"] }
+# Startup item management (Optimize page) + registry-based privacy cleanup.
+winreg = "0.55"
+

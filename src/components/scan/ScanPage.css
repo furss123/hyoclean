@@ -1,0 +1,139 @@
+.scan-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.scan-toolbar,
+.scan-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.scan-total,
+.scan-selected-size {
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.scan-categories {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.scan-category-chip {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  padding: calc(8px * var(--ui-scale)) calc(14px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: rgba(74, 159, 224, 0.1);
+  color: var(--text-primary);
+  font-size: calc(12px * var(--font-scale));
+}
+
+.scan-category-size {
+  font-family: var(--font-mono);
+  color: var(--hyot-blue);
+}
+
+.scan-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.scan-group h4 {
+  margin: 0 0 10px;
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-secondary);
+}
+
+.scan-group-truncated {
+  font-size: calc(11px * var(--font-scale));
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+
+.scan-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(6px * var(--ui-scale));
+  max-height: calc(260px * var(--ui-scale));
+  overflow-y: auto;
+}
+
+.scan-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: calc(12px * var(--font-scale));
+  padding: calc(6px * var(--ui-scale)) calc(8px * var(--ui-scale));
+  border-radius: var(--radius-sm);
+}
+
+.scan-item:hover {
+  background: rgba(74, 159, 224, 0.06);
+}
+
+.scan-item label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.scan-item-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary);
+}
+
+.scan-item-size {
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+  width: calc(70px * var(--ui-scale));
+  text-align: right;
+}
+
+.chip.risk-safe {
+  background: rgba(42, 155, 138, 0.16);
+  color: var(--hyot-teal);
+  border: none;
+  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
+}
+
+.chip.risk-caution {
+  background: rgba(232, 120, 32, 0.16);
+  color: var(--hyot-orange);
+  border: none;
+  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
+}
+
+.chip.risk-risky {
+  background: rgba(196, 43, 28, 0.16);
+  color: var(--error);
+  border: none;
+  padding: calc(3px * var(--ui-scale)) calc(10px * var(--ui-scale));
+}
+
+.scan-outcome {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scan-restored-msg {
+  font-size: calc(12px * var(--font-scale));
+  color: var(--hyot-teal);
+}

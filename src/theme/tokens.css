@@ -1,0 +1,86 @@
+/* HyoT brand tokens — shared across all HyoT apps (reference: Chaebi).
+   Do not introduce new brand hues per app; reuse these tokens. */
+:root {
+  /* Brand colors */
+  --hyot-blue: #4A9FE0;
+  --hyot-blue-dark: #2B7CC7;
+  --hyot-blue-light: #7BBFED;
+  --hyot-purple: #8B4FCC;
+  --hyot-orange: #E87820;
+  --hyot-teal: #2A9B8A;
+  --hyot-error-light: #C42B1C;
+  --hyot-error-dark: #FF7070;
+
+  /* Light theme */
+  --bg-base-light: #F6F8FC;
+  --bg-surface-light: #FFFFFF;
+  --text-primary-light: #1A2233;
+  --text-secondary-light: #4A5870;
+  --text-tertiary-light: #8896AA;
+
+  /* Dark theme */
+  --bg-base-dark: #07090C;
+  --bg-surface-dark: #0D1117;
+  --text-primary-dark: #EEF2FF;
+  --text-secondary-dark: #8896AA;
+  --text-tertiary-dark: #4A5870;
+
+  /* Radii (brand scale) */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --motion-fast: 80ms;
+  --motion-base: 160ms;
+  --motion-slow: 260ms;
+  --motion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography */
+  --font-ui: "Pretendard", -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-scale: 1.25;
+  --ui-scale: 1.25;
+
+  /* Glass / Mica */
+  --glass-opacity: 0.72;
+  --glass-blur: 14px;
+  --glass-border-light: rgba(74, 159, 224, 0.18);
+  --glass-border-dark: rgba(74, 159, 224, 0.24);
+
+  /* Spacing scale — use these instead of ad-hoc px values so gaps/padding
+     stay consistent across pages (buttons rows, card gaps, list gaps). */
+  --space-1: calc(4px * var(--ui-scale));
+  --space-2: calc(8px * var(--ui-scale));
+  --space-3: calc(12px * var(--ui-scale));
+  --space-4: calc(16px * var(--ui-scale));
+  --space-5: calc(20px * var(--ui-scale));
+  --space-6: calc(24px * var(--ui-scale));
+
+  /* Shared layout metrics */
+  --sidebar-width: calc(240px * 1.02);
+  --card-min-width: calc(260px * 1);
+}
+
+:root[data-theme="light"] {
+  --bg-base: var(--bg-base-light);
+  --bg-surface: var(--bg-surface-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --text-tertiary: var(--text-tertiary-light);
+  --glass-border: var(--glass-border-light);
+  --error: var(--hyot-error-light);
+}
+
+:root[data-theme="dark"] {
+  --bg-base: var(--bg-base-dark);
+  --bg-surface: var(--bg-surface-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-tertiary: var(--text-tertiary-dark);
+  --glass-border: var(--glass-border-dark);
+  --error: var(--hyot-error-dark);
+}

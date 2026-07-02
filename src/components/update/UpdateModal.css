@@ -1,0 +1,44 @@
+.update-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 9, 12, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.update-modal {
+  width: calc(420px * 1.2);
+  max-width: calc(100vw - 40px);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.update-modal h3 {
+  margin: 0;
+  font-size: calc(16px * var(--font-scale));
+  color: var(--text-primary);
+}
+
+.update-notes h4 {
+  margin: 0 0 6px;
+  font-size: calc(12px * var(--font-scale));
+  color: var(--text-secondary);
+}
+
+.update-notes p {
+  margin: 0;
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.update-actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}

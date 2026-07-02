@@ -1,0 +1,138 @@
+{
+  "app": {
+    "name": "HyoClean",
+    "nameKo": "HyoClean"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "scan": "Scan",
+    "clean": "Clean",
+    "optimize": "Optimize",
+    "privacy": "Privacy",
+    "tools": "Tools",
+    "reports": "Reports",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "healthScore": "System Health Score",
+    "storageCard": {
+      "title": "Storage Summary",
+      "used": "Used",
+      "free": "Free"
+    },
+    "systemStatus": {
+      "title": "System Status",
+      "cpu": "CPU",
+      "disk": "Disk usage"
+    },
+    "memoryCard": {
+      "title": "Memory Health",
+      "available": "Available",
+      "used": "In use",
+      "autoClean": "Auto clean",
+      "threshold": "Clean threshold",
+      "cleanNow": "Clean now",
+      "lastCleaned": "Last cleaned",
+      "reclaimed": "Reclaimed"
+    },
+    "quickActions": "Quick actions"
+  },
+  "settings": {
+    "title": "Settings",
+    "close": "✕ Close",
+    "language": "Language",
+    "theme": {
+      "title": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "auto": "Auto"
+    },
+    "memory": {
+      "title": "Memory auto-clean",
+      "autoOn": "Auto-clean ON",
+      "autoOff": "Auto-clean OFF",
+      "threshold": "Clean threshold (available memory %)"
+    }
+  },
+  "update": {
+    "available": "A new version is available (v{{version}})",
+    "updateNow": "Update now",
+    "later": "Later",
+    "skip": "Skip",
+    "releaseNotes": "What's new"
+  },
+  "scan": {
+    "title": "Deep Scan",
+    "runScan": "Start scan",
+    "scanning": "Scanning...",
+    "noResults": "No scan results yet. Run a scan to begin.",
+    "showingTopItems": "showing top {{count}}, totals reflect everything found",
+    "totalFound": "Cleanup candidates found",
+    "selectAllSafe": "Select all safe items",
+    "deselectAll": "Deselect all",
+    "cleanSelected": "Clean selected",
+    "cleaning": "Cleaning...",
+    "cleanDone": "Cleanup complete",
+    "reclaimed": "Space reclaimed",
+    "failed": "Failed",
+    "restore": "Undo",
+    "restored": "Restored successfully",
+    "category": {
+      "temp_files": "Temp files",
+      "browser_cache": "Browser cache",
+      "update_leftovers": "Update leftovers"
+    },
+    "risk": {
+      "safe": "Safe",
+      "caution": "Caution",
+      "risky": "Risky"
+    }
+  },
+  "clean": {
+    "title": "Smart Clean",
+    "subtitle": "Automatically recommends only safe-rated items",
+    "quickClean": "Clean now",
+    "lastRun": "Last cleanup result",
+    "noRun": "No cleanup has been run yet"
+  },
+  "optimize": {
+    "title": "Startup Optimizer",
+    "subtitle": "Freely toggle unnecessary startup programs on or off",
+    "loading": "Loading...",
+    "empty": "No startup programs found",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "refresh": "Refresh"
+  },
+  "privacy": {
+    "title": "Privacy Cleaner",
+    "runScan": "Scan for traces",
+    "clearRunHistory": "Clear Run (Win+R) history",
+    "cleared": "entries cleared",
+    "category": {
+      "recent_docs": "Recent documents",
+      "run_history": "Run history"
+    }
+  },
+  "tools": {
+    "title": "Tools",
+    "taskManager": "Task Manager",
+    "diskCleanup": "Disk Cleanup",
+    "deviceManager": "Device Manager",
+    "programsFeatures": "Programs and Features",
+    "tempFolder": "Open temp folder",
+    "startupFolder": "Open startup folder"
+  },
+  "reports": {
+    "title": "Reports",
+    "empty": "No cleanup history yet",
+    "items": "items",
+    "restore": "Undo"
+  },
+  "toast": {
+    "themeChanged": "Theme setting updated",
+    "memoryCleaned": "Memory cleanup complete"
+  },
+  "footer": "{{name}} ({{nameKo}}) v{{version}} | © {{year}} HyoT. All rights reserved.",
+  "footerHome": "Visit website"
+}

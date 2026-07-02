@@ -1,0 +1,164 @@
+@import "./theme/tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: calc(14px * var(--font-scale));
+  line-height: 1.45;
+  color: var(--text-primary);
+  background: var(--bg-base);
+  transition: background var(--motion-slow) var(--motion-ease);
+}
+
+/* Glass / Mica surface shared by cards, sidebar, modal.
+   backdrop-filter is a per-layer GPU cost, so several stacked .glass
+   surfaces (sidebar + multiple cards) add up — keep the blur radius
+   modest via the --glass-blur token rather than raising it per-component. */
+.glass {
+  background: color-mix(in srgb, var(--bg-surface) calc(var(--glass-opacity) * 100%), transparent);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.card {
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: 0 4px 24px rgba(15, 20, 30, 0.06);
+  min-height: calc(116px * var(--ui-scale));
+}
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: var(--space-4) var(--space-6) var(--space-4) var(--space-3);
+}
+
+.app-header {
+  padding: var(--space-2) var(--space-2) var(--space-4);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: calc(24px * var(--font-scale));
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-1) var(--space-2) var(--space-4);
+}
+
+.placeholder-card {
+  padding: calc(40px * var(--ui-scale));
+  text-align: center;
+  color: var(--text-tertiary);
+  border-radius: var(--radius-lg);
+}
+
+.app-footer {
+  padding: calc(10px * var(--ui-scale)) calc(8px * var(--ui-scale));
+  font-size: calc(11px * var(--font-scale));
+  font-family: var(--font-mono);
+  color: var(--text-tertiary);
+  text-align: right;
+}
+
+.app-footer a {
+  color: var(--hyot-blue-light);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: color var(--motion-base) var(--motion-ease),
+    border-color var(--motion-base) var(--motion-ease);
+}
+
+.app-footer a:hover {
+  color: var(--hyot-blue);
+  border-color: var(--hyot-blue);
+}
+
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: calc(9px * var(--ui-scale)) calc(18px * var(--ui-scale));
+  min-height: calc(38px * var(--ui-scale));
+  font-size: calc(14px * var(--font-scale));
+  font-family: var(--font-ui);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--motion-base) var(--motion-ease);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--hyot-blue), var(--hyot-blue-dark));
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+  color: var(--text-primary);
+  border-color: var(--hyot-blue);
+}
+
+/* Shared "chip" toggle button — used by Settings (language/theme) and any
+   page with a set of selectable pill options (e.g. Optimize enable/disable).
+   Lives here (not in a single feature's CSS file) since multiple unrelated
+   pages depend on it. */
+.chip {
+  padding: calc(7px * var(--ui-scale)) calc(14px * var(--ui-scale));
+  min-height: calc(30px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: calc(13px * var(--font-scale));
+  font-family: var(--font-ui);
+  cursor: pointer;
+  transition: all var(--motion-base) var(--motion-ease);
+}
+
+.chip-active {
+  background: var(--hyot-blue);
+  border-color: var(--hyot-blue);
+  color: white;
+}
+
+/* Generic horizontal row of buttons/chips, reused across Settings and
+   Dashboard quick actions. */
+.button-row,
+.settings-row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}

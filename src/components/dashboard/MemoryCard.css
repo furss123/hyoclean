@@ -1,0 +1,60 @@
+.memory-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.memory-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.memory-card-header h3 {
+  margin: 0;
+  font-size: calc(16px * var(--font-scale));
+  color: var(--text-primary);
+}
+
+.memory-gauge-track {
+  height: calc(10px * var(--ui-scale));
+  border-radius: var(--radius-pill);
+  background: rgba(136, 150, 170, 0.18);
+  overflow: hidden;
+}
+
+.memory-gauge-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--hyot-teal), var(--hyot-blue));
+  transition: width var(--motion-slow) var(--motion-ease);
+}
+
+.memory-gauge-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-secondary);
+  margin-top: calc(6px * var(--ui-scale));
+  gap: calc(10px * var(--ui-scale));
+  flex-wrap: wrap;
+}
+
+.memory-threshold {
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-secondary);
+  padding: calc(8px * var(--ui-scale)) calc(10px * var(--ui-scale));
+  border-radius: var(--radius-md);
+  background: rgba(74, 159, 224, 0.08);
+}
+
+.memory-card-footer {
+  display: flex;
+  align-items: center;
+  gap: calc(12px * var(--ui-scale));
+  flex-wrap: wrap;
+}
+
+.memory-last {
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-tertiary);
+}

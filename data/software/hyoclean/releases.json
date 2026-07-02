@@ -1,0 +1,16 @@
+{
+  "current": "0.1.0",
+  "releases": [
+    {
+      "version": "0.1.0",
+      "date": "2026-07-02",
+      "notes": {
+        "ko": "초기 MVP: 딥 스캔, 스마트 정리, 실시간 메모리 정리(보수적 모드), KO/EN 지원, 자동 업데이트 체크",
+        "en": "Initial MVP: deep scan, smart cleanup, real-time memory cleaner (conservative mode), KO/EN support, auto-update check"
+      },
+      "assets": {
+        "windows": "https://github.com/furss123/hyoclean/releases/download/v0.1.0/HyoClean_0.1.0_x64-setup.exe"
+      }
+    }
+  ]
+}

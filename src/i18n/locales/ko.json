@@ -1,0 +1,138 @@
+{
+  "app": {
+    "name": "HyoClean",
+    "nameKo": "효클린"
+  },
+  "nav": {
+    "dashboard": "대시보드",
+    "scan": "스캔",
+    "clean": "정리",
+    "optimize": "최적화",
+    "privacy": "프라이버시",
+    "tools": "도구",
+    "reports": "리포트",
+    "settings": "설정"
+  },
+  "dashboard": {
+    "healthScore": "시스템 건강 점수",
+    "storageCard": {
+      "title": "저장공간 요약",
+      "used": "사용 중",
+      "free": "여유 공간"
+    },
+    "systemStatus": {
+      "title": "시스템 상태",
+      "cpu": "CPU",
+      "disk": "디스크 사용률"
+    },
+    "memoryCard": {
+      "title": "메모리 건강",
+      "available": "가용 메모리",
+      "used": "사용 중",
+      "autoClean": "자동 정리",
+      "threshold": "정리 임계치",
+      "cleanNow": "지금 정리",
+      "lastCleaned": "마지막 정리",
+      "reclaimed": "회수됨"
+    },
+    "quickActions": "빠른 실행"
+  },
+  "settings": {
+    "title": "설정",
+    "close": "✕ 닫기",
+    "language": "언어",
+    "theme": {
+      "title": "테마",
+      "light": "라이트",
+      "dark": "다크",
+      "auto": "자동"
+    },
+    "memory": {
+      "title": "메모리 자동 정리",
+      "autoOn": "자동 정리 ON",
+      "autoOff": "자동 정리 OFF",
+      "threshold": "정리 임계치(가용 메모리 %)"
+    }
+  },
+  "update": {
+    "available": "새 버전이 있습니다 (v{{version}})",
+    "updateNow": "지금 업데이트",
+    "later": "나중에",
+    "skip": "건너뛰기",
+    "releaseNotes": "변경사항"
+  },
+  "scan": {
+    "title": "딥 스캔",
+    "runScan": "스캔 시작",
+    "scanning": "스캔 중...",
+    "noResults": "스캔 결과가 없습니다. 스캔을 시작해보세요.",
+    "showingTopItems": "상위 {{count}}개 표시, 합계는 전체 기준",
+    "totalFound": "발견된 정리 대상",
+    "selectAllSafe": "안전 항목 전체 선택",
+    "deselectAll": "선택 해제",
+    "cleanSelected": "선택 항목 정리",
+    "cleaning": "정리 중...",
+    "cleanDone": "정리 완료",
+    "reclaimed": "확보된 용량",
+    "failed": "실패",
+    "restore": "되돌리기",
+    "restored": "복원되었습니다",
+    "category": {
+      "temp_files": "임시 파일",
+      "browser_cache": "브라우저 캐시",
+      "update_leftovers": "업데이트 잔여물"
+    },
+    "risk": {
+      "safe": "안전",
+      "caution": "주의",
+      "risky": "위험"
+    }
+  },
+  "clean": {
+    "title": "스마트 정리",
+    "subtitle": "안전 등급 항목만 자동으로 추천 정리합니다",
+    "quickClean": "지금 정리",
+    "lastRun": "최근 정리 결과",
+    "noRun": "아직 실행한 정리가 없습니다"
+  },
+  "optimize": {
+    "title": "시작프로그램 최적화",
+    "subtitle": "불필요한 시작프로그램을 껐다 켰다 자유롭게 전환하세요",
+    "loading": "불러오는 중...",
+    "empty": "등록된 시작프로그램이 없습니다",
+    "enabled": "사용",
+    "disabled": "사용 안함",
+    "refresh": "새로고침"
+  },
+  "privacy": {
+    "title": "프라이버시 클리너",
+    "runScan": "흔적 스캔",
+    "clearRunHistory": "실행 기록(Win+R) 지우기",
+    "cleared": "개 항목을 지웠습니다",
+    "category": {
+      "recent_docs": "최근 문서",
+      "run_history": "실행 기록"
+    }
+  },
+  "tools": {
+    "title": "도구",
+    "taskManager": "작업 관리자",
+    "diskCleanup": "디스크 정리",
+    "deviceManager": "장치 관리자",
+    "programsFeatures": "프로그램 추가/제거",
+    "tempFolder": "임시 폴더 열기",
+    "startupFolder": "시작프로그램 폴더 열기"
+  },
+  "reports": {
+    "title": "리포트",
+    "empty": "정리 내역이 없습니다",
+    "items": "개 항목",
+    "restore": "되돌리기"
+  },
+  "toast": {
+    "themeChanged": "테마 설정이 변경되었습니다",
+    "memoryCleaned": "메모리 정리가 완료되었습니다"
+  },
+  "footer": "{{name}} ({{nameKo}}) v{{version}} | © {{year}} HyoT. All rights reserved.",
+  "footerHome": "홈페이지 바로가기"
+}
