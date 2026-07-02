@@ -8,6 +8,7 @@ Tauri + React + TypeScript, Rust 백엔드로 구성된 HyoT 제품군의 일부
 - **딥 스캔**: 임시파일, 캐시, 중복파일, 고아 레지스트리 탐지
 - **스마트 정리**: 신뢰등급(안전/주의/위험) 기반 추천 정리
 - **실시간 메모리 정리**: 가용 메모리 임계치 감지 → 자동/수동 정리, 화이트리스트 보호
+- **강력 정리(Deep free)**: 백그라운드 프로세스의 작업 메모리를 트리밍해 물리 RAM 즉시 확보 (보호/포그라운드 프로세스 제외)
 - **롤백 안전장치**: 정리 전 복원지점 + 1클릭 되돌리기
 - **KO/EN 동시 지원**: 언어별 완전 로컬라이징 (설정에서 즉시 전환)
 - **자동 업데이트 체크**: 새 버전 알림 → 릴리즈 노트 → 지금/나중에/건너뛰기
@@ -33,7 +34,10 @@ src/
     dashboard/    # Dashboard, MemoryCard (실시간 메모리 정리 UI)
 src-tauri/
   src/lib.rs      # Tauri commands: get_memory_status, clean_memory_now
-data/software/hyoclean/  # hyot.dev 게시용 meta.json / releases.json
+public/
+  branding/       # hyoclean-icon.svg / hyoclean-banner.svg (스토어·마케팅 자산)
+  favicon.svg     # 앱 파비콘 (브랜드 마크)
+data/software/hyoclean/  # hyot.dev 게시용 meta.json / releases.json (icon/banner 동기화본)
 ```
 
 ## 브랜드 가이드

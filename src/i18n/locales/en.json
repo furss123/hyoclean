@@ -13,6 +13,15 @@
     "reports": "Reports",
     "settings": "Settings"
   },
+  "pageDesc": {
+    "dashboard": "Live view of memory, storage, and CPU health",
+    "scan": "Finds cleanup targets sorted by safety rating",
+    "clean": "Cleans only safe-rated items in one click",
+    "optimize": "Trim startup programs to speed up boot",
+    "privacy": "Wipe recent-document and run-history traces",
+    "tools": "Shortcuts to the Windows tools you use most",
+    "reports": "Manage cleanup history and restore points"
+  },
   "dashboard": {
     "healthScore": "System Health Score",
     "storageCard": {
@@ -32,6 +41,10 @@
       "autoClean": "Auto clean",
       "threshold": "Clean threshold",
       "cleanNow": "Clean now",
+      "inUse": "in use",
+      "deepFree": "Deep free",
+      "deepFreeing": "Freeing...",
+      "deepFreeHint": "Trims background app working sets to reclaim physical RAM immediately (protected processes are skipped)",
       "lastCleaned": "Last cleaned",
       "reclaimed": "Reclaimed"
     },

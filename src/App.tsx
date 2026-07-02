@@ -41,6 +41,7 @@ function Shell() {
       <div className="app-main">
         <header className="app-header">
           <h1>{t(`nav.${active}`)}</h1>
+          <p className="app-header-desc">{t(`pageDesc.${active}`)}</p>
         </header>
 
         <div className="app-content">

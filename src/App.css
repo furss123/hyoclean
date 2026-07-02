@@ -64,6 +64,12 @@ body {
   color: var(--text-primary);
 }
 
+.app-header-desc {
+  margin: calc(4px * var(--ui-scale)) 0 0;
+  font-size: calc(13px * var(--font-scale));
+  color: var(--text-tertiary);
+}
+
 .app-content {
   flex: 1;
   overflow-y: auto;

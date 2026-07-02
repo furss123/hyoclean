@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 release/
+
+# Adjacent static-site build outputs (belong to the software-center site, not this app)
+_site_*/

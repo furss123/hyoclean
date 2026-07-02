@@ -16,6 +16,29 @@
   color: var(--text-primary);
 }
 
+.memory-gauge-readout {
+  display: flex;
+  align-items: baseline;
+  gap: calc(8px * var(--ui-scale));
+  margin-bottom: calc(10px * var(--ui-scale));
+}
+
+.memory-gauge-percent {
+  font-size: calc(34px * var(--font-scale));
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--hyot-teal), var(--hyot-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--hyot-blue);
+}
+
+.memory-gauge-caption {
+  font-size: calc(12px * var(--font-scale));
+  color: var(--text-tertiary);
+}
+
 .memory-gauge-track {
   height: calc(10px * var(--ui-scale));
   border-radius: var(--radius-pill);

@@ -64,12 +64,32 @@ export function MemoryCard() {
     };
   }, [autoClean, threshold]);
 
+  const [deepFreeing, setDeepFreeing] = useState(false);
+
   const handleCleanNow = async () => {
     if (!status) return;
     const after = await invoke<MemoryStatus>("clean_memory_now");
     setReclaimedMb(Math.max(0, status.used_mb - after.used_mb));
     setStatus(after);
     setLastCleaned(new Date().toLocaleTimeString());
+  };
+
+  // Pro "aggressive mode": trims background process working sets to free
+  // physical RAM immediately (Windows only; the Rust side skips protected
+  // and foreground processes). Falls back gracefully on non-Windows hosts.
+  const handleDeepFree = async () => {
+    if (!status || deepFreeing) return;
+    setDeepFreeing(true);
+    try {
+      const after = await invoke<MemoryStatus>("clean_memory_aggressive", { whitelist: [] });
+      setReclaimedMb(Math.max(0, status.used_mb - after.used_mb));
+      setStatus(after);
+      setLastCleaned(new Date().toLocaleTimeString());
+    } catch (e) {
+      console.debug("aggressive clean unavailable", e);
+    } finally {
+      setDeepFreeing(false);
+    }
   };
 
   const usedPercent = status?.percent_used ?? 0;
@@ -84,6 +104,10 @@ export function MemoryCard() {
       </div>
 
       <div className="memory-gauge">
+        <div className="memory-gauge-readout">
+          <span className="memory-gauge-percent">{Math.round(usedPercent)}%</span>
+          <span className="memory-gauge-caption">{t("dashboard.memoryCard.inUse")}</span>
+        </div>
         <div className="memory-gauge-track">
           <div
             className="memory-gauge-fill"
@@ -101,6 +125,14 @@ export function MemoryCard() {
       <div className="memory-card-footer">
         <button className="btn-primary" onClick={handleCleanNow}>
           {t("dashboard.memoryCard.cleanNow")}
+        </button>
+        <button
+          className="btn-secondary"
+          onClick={handleDeepFree}
+          disabled={deepFreeing}
+          title={t("dashboard.memoryCard.deepFreeHint")}
+        >
+          {deepFreeing ? t("dashboard.memoryCard.deepFreeing") : t("dashboard.memoryCard.deepFree")}
         </button>
         {lastCleaned && (
           <span className="memory-last">
