@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { APP_VERSION } from "../../version";
 
-const APP_VERSION = "0.1.0";
 const HOMEPAGE_URL = "https://hyot.dev";
 
 export function Footer() {
@@ -15,9 +15,9 @@ export function Footer() {
         version: APP_VERSION,
         year,
       })}
-      {" · "}
+      {" | "}
       <a href={HOMEPAGE_URL} target="_blank" rel="noreferrer">
-        {t("footerHome")}
+        hyot.dev
       </a>
     </footer>
   );

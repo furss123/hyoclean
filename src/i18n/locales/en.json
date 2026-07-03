@@ -93,7 +93,8 @@
     "category": {
       "temp_files": "Temp files",
       "browser_cache": "Browser cache",
-      "update_leftovers": "Update leftovers"
+      "update_leftovers": "Update leftovers",
+      "crash_dumps": "Crash dumps"
     },
     "risk": {
       "safe": "Safe",
@@ -146,6 +147,5 @@
     "themeChanged": "Theme setting updated",
     "memoryCleaned": "Memory cleanup complete"
   },
-  "footer": "{{name}} ({{nameKo}}) v{{version}} | © {{year}} HyoT. All rights reserved.",
-  "footerHome": "Visit website"
+  "footer": "{{name}} ({{nameKo}}) v{{version}} | © {{year}} HyoT. All rights reserved."
 }

@@ -6,7 +6,7 @@ use walkdir::WalkDir;
 /// Trust tier shown in the UI as a colored chip — drives default checkbox state.
 /// "safe" is pre-checked, "caution" is unchecked by default, "risky" always
 /// requires an explicit opt-in (never included in "select all").
-#[derive(Serialize, Clone, Copy, PartialEq, Eq)]
+#[derive(Serialize, Clone, Copy, PartialEq, Eq, Debug)]
 #[serde(rename_all = "lowercase")]
 pub enum RiskLevel {
     Safe,
@@ -84,6 +84,21 @@ fn scan_targets() -> Vec<(PathBuf, &'static str, RiskLevel)> {
             PathBuf::from(&windir).join("Temp"),
             "temp_files",
             RiskLevel::Safe,
+        ));
+        // Crash minidumps: safe to reclaim disk space, but risky to delete
+        // blindly since they're the only record of a past BSOD/crash — keep
+        // this the one category that always requires an explicit opt-in.
+        targets.push((
+            PathBuf::from(&windir).join("Minidump"),
+            "crash_dumps",
+            RiskLevel::Risky,
+        ));
+    }
+    if let Ok(local_appdata) = std::env::var("LOCALAPPDATA") {
+        targets.push((
+            PathBuf::from(&local_appdata).join("CrashDumps"),
+            "crash_dumps",
+            RiskLevel::Risky,
         ));
     }
 
@@ -165,5 +180,26 @@ pub fn run_deep_scan() -> ScanResult {
         items,
         categories,
         total_size_bytes,
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn deep_scan_runs_even_when_crash_dump_folders_are_absent() {
+        // Real invocation of the production scan path on this machine. Minidump
+        // and CrashDumps folders may or may not exist here — either way this
+        // must not panic (scan_targets skips missing roots via `root.exists()`).
+        let result = run_deep_scan();
+        assert!(!result.scanned_at.is_empty());
+
+        // If any crash dumps were actually found, they must be tagged Risky —
+        // this is the one tier `selectAllSafe` on the frontend must never
+        // auto-include.
+        for item in result.items.iter().filter(|i| i.category == "crash_dumps") {
+            assert_eq!(item.risk, RiskLevel::Risky, "crash dump items must be Risky");
+        }
     }
 }

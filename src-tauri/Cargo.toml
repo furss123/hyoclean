@@ -1,6 +1,6 @@
 [package]
 name = "hyoclean"
-version = "0.1.0"
+version = "0.1.1"
 description = "HyoClean - Windows system cleaner & real-time memory optimizer by HyoT"
 authors = ["HyoT"]
 edition = "2021"

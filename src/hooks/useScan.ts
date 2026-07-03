@@ -52,12 +52,36 @@ export function useScan() {
     try {
       const outcome = await invoke<CleanOutcome>("clean_selected_items", { paths });
       setLastOutcome(outcome);
-      // Drop cleaned items from the current result so the list reflects reality.
+      // Drop cleaned items from the current result and roll their size/count
+      // back out of the category summaries and grand total — otherwise those
+      // figures stay stuck at pre-clean values (scan totals reflect every file
+      // found, not just the capped rows kept in `items`, so we adjust by delta
+      // instead of recomputing summaries from the item list).
       if (result) {
         const cleanedSet = new Set(paths.filter((p) => !outcome.failed_paths.includes(p)));
+        const removedItems = result.items.filter((i) => cleanedSet.has(i.path));
+        const deltaByCategory = new Map<string, { count: number; size: number }>();
+        for (const item of removedItems) {
+          const delta = deltaByCategory.get(item.category) ?? { count: 0, size: 0 };
+          delta.count += 1;
+          delta.size += item.size_bytes;
+          deltaByCategory.set(item.category, delta);
+        }
+        const removedBytes = removedItems.reduce((sum, i) => sum + i.size_bytes, 0);
+
         setResult({
           ...result,
           items: result.items.filter((i) => !cleanedSet.has(i.path)),
+          categories: result.categories.map((c) => {
+            const delta = deltaByCategory.get(c.category);
+            if (!delta) return c;
+            return {
+              ...c,
+              item_count: Math.max(0, c.item_count - delta.count),
+              total_size_bytes: Math.max(0, c.total_size_bytes - delta.size),
+            };
+          }),
+          total_size_bytes: Math.max(0, result.total_size_bytes - removedBytes),
         });
       }
       return outcome;

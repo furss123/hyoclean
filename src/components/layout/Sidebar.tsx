@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
+import { APP_VERSION } from "../../version";
 import "./Sidebar.css";
-
-const APP_VERSION = "0.1.0";
 
 export type NavKey =
   | "dashboard"
@@ -38,15 +37,16 @@ export function Sidebar({ active, onNavigate, onOpenSettings }: SidebarProps) {
         <span className="sidebar-brand-mark" aria-hidden="true">
           <svg viewBox="0 0 512 512" width="100%" height="100%">
             <defs>
-              <linearGradient id="sbMark" x1="72" y1="56" x2="440" y2="456" gradientUnits="userSpaceOnUse">
+              <linearGradient id="sbMark" x1="40" y1="40" x2="472" y2="472" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#4A9FE0" />
-                <stop offset="0.55" stopColor="#2B7CC7" />
-                <stop offset="1" stopColor="#2A9B8A" />
+                <stop offset="1" stopColor="#2B7CC7" />
               </linearGradient>
             </defs>
-            <rect x="32" y="32" width="448" height="448" rx="116" fill="url(#sbMark)" />
-            <path d="M242 122 Q272 226 380 256 Q272 286 242 390 Q212 286 104 256 Q212 226 242 122 Z" fill="#FFFFFF" />
-            <path d="M374 128 Q385 168 424 180 Q385 192 374 232 Q363 192 324 180 Q363 168 374 128 Z" fill="#FFFFFF" fillOpacity="0.9" />
+            <rect width="512" height="512" rx="113" fill="url(#sbMark)" />
+            <path
+              d="M256 101 Q281 231 411 256 Q281 281 256 411 Q231 281 101 256 Q231 231 256 101 Z"
+              fill="#FFFFFF"
+            />
           </svg>
         </span>
         <span className="sidebar-brand-name">{t("app.name")}</span>

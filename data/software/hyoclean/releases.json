@@ -1,6 +1,17 @@
 {
-  "current": "0.1.0",
+  "current": "0.1.1",
   "releases": [
+    {
+      "version": "0.1.1",
+      "date": "2026-07-03",
+      "notes": {
+        "ko": "메모리 자동 정리가 실제로 RAM을 회수하도록 수정, CPU 사용률 측정 병목 제거, 위험 등급(크래시 덤프) 스캔 추가, 정리 후 스캔 요약 수치 정확도 수정, 브랜드킷 기준 아이콘/배너 전면 교체",
+        "en": "Fixed auto-clean to actually reclaim RAM, removed a CPU-usage measurement bottleneck, added a real risky-tier scan target (crash dumps), fixed stale scan totals after partial cleanup, refreshed icon/banner to the brand-kit spec"
+      },
+      "assets": {
+        "windows": "https://github.com/furss123/hyoclean/releases/download/v0.1.1/HyoClean_0.1.1_x64-setup.exe"
+      }
+    },
     {
       "version": "0.1.0",
       "date": "2026-07-02",

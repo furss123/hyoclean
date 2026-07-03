@@ -50,7 +50,15 @@ export function MemoryCard() {
     }
 
     async function runClean(before: MemoryStatus) {
-      const after = await invoke<MemoryStatus>("clean_memory_now");
+      // Auto-clean must actually reclaim RAM — use aggressive mode (protected
+      // and foreground processes are skipped in the Rust layer). Falls back to
+      // the conservative re-measure if aggressive mode is unavailable.
+      let after: MemoryStatus;
+      try {
+        after = await invoke<MemoryStatus>("clean_memory_aggressive", { whitelist: [] });
+      } catch {
+        after = await invoke<MemoryStatus>("clean_memory_now");
+      }
       setStatus(after);
       setReclaimedMb(Math.max(0, before.used_mb - after.used_mb));
       setLastCleaned(new Date().toLocaleTimeString());

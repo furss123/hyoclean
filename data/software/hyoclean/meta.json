@@ -5,8 +5,8 @@
   "platforms": ["windows"],
   "tags": ["windows", "utility", "cleaner", "memory", "optimizer"],
   "featured": true,
-  "icon": "/data/software/hyoclean/icon.svg",
-  "banner": "/data/software/hyoclean/banner.svg",
+  "icon": "/data/software/hyoclean/icon.webp",
+  "banner": "/data/software/hyoclean/banner.webp",
   "name": { "ko": "효클린", "en": "HyoClean" },
   "shortDescription": {
     "ko": "CCleaner보다 강력한 실시간 메모리 정리 & 시스템 최적화 도구",
@@ -23,6 +23,6 @@
   },
   "githubRepo": "furss123/hyoclean",
   "createdAt": "2026-07-02",
-  "updatedAt": "2026-07-02",
+  "updatedAt": "2026-07-03",
   "visible": true
 }
