@@ -43,8 +43,10 @@ export function Sidebar({ active, onNavigate, onOpenSettings }: SidebarProps) {
               </linearGradient>
             </defs>
             <rect width="512" height="512" rx="113" fill="url(#sbMark)" />
+            <line x1="256" y1="112" x2="256" y2="272" stroke="#FFFFFF" strokeWidth="38" strokeLinecap="round" />
+            <path d="M256 254 L354 396 L158 396 Z" fill="#FFFFFF" />
             <path
-              d="M256 101 Q281 231 411 256 Q281 281 256 411 Q231 281 101 256 Q231 231 256 101 Z"
+              d="M366 118 Q374 142 398 150 Q374 158 366 182 Q358 158 334 150 Q358 142 366 118 Z"
               fill="#FFFFFF"
             />
           </svg>

@@ -6,5 +6,13 @@
     </linearGradient>
   </defs>
   <rect x="0" y="0" width="512" height="512" rx="113" fill="url(#tile)"/>
-  <path d="M256 101 Q281 231 411 256 Q281 281 256 411 Q231 281 101 256 Q231 231 256 101 Z" fill="#FFFFFF"/>
+
+  <!-- broom: standing upright, compact and symmetric so it stays a solid,
+       legible silhouette at 16-24px (a diagonal stick+fan alises into an
+       ambiguous blob at favicon size; a centered vertical form does not) -->
+  <line x1="256" y1="112" x2="256" y2="272" stroke="#FFFFFF" stroke-width="38" stroke-linecap="round"/>
+  <path d="M256 254 L354 396 L158 396 Z" fill="#FFFFFF"/>
+
+  <!-- sparkle: the clean/shine result -->
+  <path d="M366 118 Q374 142 398 150 Q374 158 366 182 Q358 158 334 150 Q358 142 366 118 Z" fill="#FFFFFF"/>
 </svg>
