@@ -147,5 +147,5 @@
     "themeChanged": "Theme setting updated",
     "memoryCleaned": "Memory cleanup complete"
   },
-  "footer": "{{name}} ({{nameKo}}) v{{version}} | © {{year}} HyoT. All rights reserved."
+  "footer": "{{name}} v{{version}} \u00b7 \u00a9 {{year}} HyoT. All rights reserved."
 }

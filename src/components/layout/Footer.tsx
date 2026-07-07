@@ -15,7 +15,7 @@ export function Footer() {
         version: APP_VERSION,
         year,
       })}
-      {" | "}
+      {" \u00b7 "}
       <a href={HOMEPAGE_URL} target="_blank" rel="noreferrer">
         hyot.dev
       </a>

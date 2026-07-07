@@ -31,6 +31,7 @@ pub fn run() {
             clean::clean_selected_items,
             clean::restore_clean_batch,
             update::check_for_update,
+            update::install_ready_update,
             optimize::list_startup_items,
             optimize::set_startup_item_enabled,
             privacy::run_privacy_scan,

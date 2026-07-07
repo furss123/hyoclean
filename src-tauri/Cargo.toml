@@ -1,6 +1,6 @@
 [package]
 name = "hyoclean"
-version = "0.1.2"
+version = "0.1.3"
 description = "HyoClean - Windows system cleaner & real-time memory optimizer by HyoT"
 authors = ["HyoT"]
 edition = "2021"
@@ -38,7 +38,7 @@ chrono = "0.4"
 # Auto-update check against releases.json.
 reqwest = { version = "0.12", features = ["json"] }
 semver = "1"
-tokio = { version = "1", features = ["rt-multi-thread"] }
+sha2 = "0.10"
+tokio = { version = "1", features = ["fs", "rt-multi-thread"] }
 # Startup item management (Optimize page) + registry-based privacy cleanup.
 winreg = "0.55"
-

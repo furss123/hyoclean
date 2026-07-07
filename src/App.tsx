@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { invoke } from "@tauri-apps/api/core";
 import { useTranslation } from "react-i18next";
 import { ThemeProvider } from "./context/ThemeContext";
 import { MemorySettingsProvider } from "./context/MemorySettingsContext";
@@ -24,9 +25,8 @@ function Shell() {
   const [updateModalOpen, setUpdateModalOpen] = useState(false);
   const { info: updateInfo, skip: skipUpdate, remindLater } = useUpdateCheck();
 
-  const handleUpdateNow = () => {
-    // MVP: link out to the release page; the download/install pipeline lands later.
-    window.open("https://hyot.dev", "_blank");
+  const handleUpdateNow = async () => {
+    await invoke("install_ready_update");
     setUpdateModalOpen(false);
   };
 

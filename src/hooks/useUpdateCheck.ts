@@ -3,12 +3,13 @@ import { invoke } from "@tauri-apps/api/core";
 
 interface UpdateInfo {
   available: boolean;
+  ready: boolean;
   latest_version: string;
   notes_ko: string;
   notes_en: string;
 }
 
-const CHECK_INTERVAL_MS = 6 * 60 * 60 * 1000; // 6 hours, per product spec
+const CHECK_INTERVAL_MS = 12 * 60 * 60 * 1000;
 const SKIP_KEY = "hyoclean.update.skippedVersion";
 
 export function useUpdateCheck() {
@@ -23,7 +24,7 @@ export function useUpdateCheck() {
         const result = await invoke<UpdateInfo>("check_for_update");
         if (cancelled) return;
         const skipped = localStorage.getItem(SKIP_KEY);
-        if (result.available && result.latest_version !== skipped) {
+        if (result.available && result.ready && result.latest_version !== skipped) {
           setInfo(result);
           setDismissedToast(false);
         }
